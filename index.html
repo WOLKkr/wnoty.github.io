@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bootstrap In Practice - Landing Page Example</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<link href="http://fonts.googleapis.com/css?family=Abel|Open+Sans:400,600" rel="stylesheet" />
+	<link href="wnoty.css" rel="stylesheet" />
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="wnoty.js"></script>
+
+	<style>
+		html {
+			background: url(bg.jpg) no-repeat center center fixed;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+		body {
+			padding-top: 20px;
+			font-size: 16px;
+			font-family: "Open Sans",serif;
+			background: transparent;
+		}
+
+		h1 {
+			font-family: "Abel", Arial, sans-serif;
+			font-weight: 400;
+			font-size: 40px;
+		}
+		.panel {
+			background-color: rgba(255, 255, 255, 0.9);
+		}
+
+		.margin-base-vertical {
+			margin: 40px 0;
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<div class="container text-center">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 panel panel-default">
+
+				<h1 class="margin-base-vertical">What is WNOTY?</h1>
+				<p>
+					It's jquery notification plugin
+				</p>
+				<p>
+					Stylish, fast, simple
+				</p>
+				<p>
+					Ok, select position and click the button below
+				</p>
+				<select class="form-control" id="position">
+					<option value="top-left">Top left</option>
+					<option value="bottom-left">Bottom left</option>
+					<option value="top-right">Top Right</option>
+					<option value="bottom-right">Bottom Right</option>
+				</select>
+				<br>
+				<button type="submit" class="btn btn-success btn-lg" onclick="wnoty('success')">Success</button>
+				<button type="submit" class="btn btn-primary btn-lg" onclick="wnoty('info')">Info</button>
+				<button type="submit" class="btn btn-danger btn-lg" onclick="wnoty('error')">Error</button>
+				<button type="submit" class="btn btn-warning btn-lg" onclick="wnoty('warnong')">Warning</button>
+
+				<div class="margin-base-vertical">
+					<small class="text-muted"><a href="http://qcode.site/">Made by QCODE.site</a>.</small>
+				</div>
+
+			</div>
+		</div>
+	</div>
+<script>
+	function wnoty(type) {
+		$.wnoty({
+			position: $('#position').val(),
+			type: type,
+			message: "It's test message!"
+		});
+	}
+</script>
+</body>
+</html>
